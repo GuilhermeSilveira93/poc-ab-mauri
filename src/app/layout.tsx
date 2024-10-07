@@ -13,9 +13,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body>
-        <header className="flex h-16 items-center justify-between border-b bg-background px-3 sm:px-6 sm:pl-2"></header>
-        <main className="overflow-auto px-3 py-9 sm:px-6 min-w-full min-h-screen bg-background space-y-1 shadow-inner shadow-secondary-foreground/10">
+      <body className="min-h-screen">
+        <header className="fixed left-0 top-0 z-50 flex h-16 w-full items-center justify-between border-b bg-background px-3 sm:px-6 sm:pl-2"></header>
+        <main className="relative top-16 max-h-[calc(100vh-4rem)] w-full flex-1 space-y-6 overflow-auto px-8 py-9 pb-16 shadow-inner shadow-secondary-foreground/10 sm:px-14">
           {children}
         </main>
       </body>

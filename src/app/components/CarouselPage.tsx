@@ -11,8 +11,9 @@ export const CarouselPage = () => {
           {Array.from({ length: 2 }).map((_, index) => (
             <CarouselItem key={index} className="relative">
               <Image
-                className="rounded-3xl "
-                height={300}
+                className="h-28 w-full rounded-2xl object-cover md:h-52 lg:h-80"
+                style={{ objectFit: 'cover' }}
+                height={100}
                 width={1920}
                 alt={`ImageBanner${index}`}
                 src={`https://poc-abb.vercel.app/_next/image?url=%2Fbanner-${index + 1}.jpg&w=1920&q=100`}
