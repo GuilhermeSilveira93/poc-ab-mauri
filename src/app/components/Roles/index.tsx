@@ -14,7 +14,7 @@ const RolesInformation = () => {
   return (
     <section className="">
       <Card>
-        <CardHeader className="flex flex-row justify-between items-center">
+        <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle className="text-2xl font-bold">
             Confira as regras
           </CardTitle>
@@ -28,10 +28,10 @@ const RolesInformation = () => {
                   Conheça as regras
                 </DialogTitle>
               </DialogHeader>
-              <DialogDescription className="max-w-5xl h-96 text-justify">
+              <DialogDescription className="h-96 max-w-5xl text-justify">
                 <ScrollArea className="h-full text-[1rem]">
                   <div className="space-y-8">
-                    <h2 className="text-xl text-black font-bold">
+                    <h2 className="text-xl font-bold text-black">
                       What is Lorem Ipsum?
                     </h2>
                     <p>
@@ -47,17 +47,17 @@ const RolesInformation = () => {
                       software like Aldus PageMaker including versions of Lorem
                       Ipsum.
                     </p>
-                    <h2 className="text-xl text-black font-bold">
+                    <h2 className="text-xl font-bold text-black">
                       Where does it come from?
                     </h2>
-                    <ul className="list-disc ml-4">
+                    <ul className="ml-4 list-disc">
                       <li>Lorem ipsum dolor sit amet</li>
                       <li>Consectetur adipiscing elit</li>
                       <li>Integer molestie lorem at massa</li>
                       <li>Facilisis in pretium nisl aliquet</li>
                       <li>Nulla volutpat aliquam velit</li>
                     </ul>
-                    <h2 className="text-xl text-black font-bold">
+                    <h2 className="text-xl font-bold text-black">
                       Where does it come from?
                     </h2>
                     <p>
@@ -76,7 +76,7 @@ const RolesInformation = () => {
                       first line of Lorem Ipsum, Lorem ipsum dolor sit amet..,
                       comes from a line in section 1.10.32.
                     </p>
-                    <h2 className="text-xl text-black font-bold">
+                    <h2 className="text-xl font-bold text-black">
                       Where does it come from?
                     </h2>
                     <p>

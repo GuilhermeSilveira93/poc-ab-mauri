@@ -12,6 +12,8 @@ export default function Home() {
       </div>
       <div>
         <RolesInformation />
+      </div>
+      <div>
         <DesempenhoGeral />
       </div>
     </>
