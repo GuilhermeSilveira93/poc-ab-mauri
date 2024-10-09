@@ -18,6 +18,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 import { cn } from '@/lib/utils'
+import delay from '@/utils/delay'
 import { Trophy } from 'lucide-react'
 const desempenho = [
   {
@@ -65,7 +66,8 @@ const desempenho = [
     ],
   },
 ]
-const DesempenhoGeral = () => {
+const DesempenhoGeral = async () => {
+  await delay(4)
   return (
     <Tabs defaultValue="1">
       <TabsList>

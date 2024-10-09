@@ -1,4 +1,4 @@
-import { CarouselContext } from '../components/Carousel/Carousel'
+import { CarouselContext } from '../components/CarouselCustom/Carousel'
 
 import { useContextSelector } from 'use-context-selector'
 

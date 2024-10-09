@@ -10,9 +10,12 @@ import {
 } from '@/components/ui/dialog'
 import { ScrollArea } from '@/components/ui/scroll-area'
 
-const RolesInformation = () => {
+import delay from '@/utils/delay'
+
+const RolesInformation = async () => {
+  await delay(5)
   return (
-    <section className="">
+    <section>
       <Card>
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle className="text-2xl font-bold">

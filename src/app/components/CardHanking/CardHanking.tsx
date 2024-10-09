@@ -22,6 +22,7 @@ import {
 } from '@/components/ui/table'
 
 import { cn } from '@/lib/utils'
+import delay from '@/utils/delay'
 import { User, Trophy, DollarSign } from 'lucide-react'
 const GroupHanking = [
   {
@@ -103,7 +104,8 @@ const GroupHanking = [
   },
 ]
 
-const CardHanking = () => {
+const CardHanking = async () => {
+  await delay(4)
   return (
     <section className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
       {GroupHanking.map(({ icon: Icon, ...grupo }, i) => {

@@ -2,11 +2,14 @@ import Image from 'next/image'
 
 import { CarouselContent, CarouselItem } from '@/components/ui/carousel'
 
-import { Carousel } from './Carousel'
-export const CarouselPage = () => {
+import delay from '@/utils/delay'
+
+import { CustomCarousel } from './CarouselCustom'
+export const CarouselPage = async () => {
+  await delay(3)
   return (
     <section>
-      <Carousel.ROOT>
+      <CustomCarousel.ROOT>
         <CarouselContent>
           {Array.from({ length: 2 }).map((_, index) => (
             <CarouselItem key={index} className="relative">
@@ -21,8 +24,8 @@ export const CarouselPage = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <Carousel.Navigation />
-      </Carousel.ROOT>
+        <CustomCarousel.Navigation />
+      </CustomCarousel.ROOT>
     </section>
   )
 }
