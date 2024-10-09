@@ -27,7 +27,6 @@ export default function CarouselROOT({
     }
     setCount(api.scrollSnapList().length)
     setCurrent(api.selectedScrollSnap() + 1)
-
     api.on('select', () => {
       setCurrent(api.selectedScrollSnap() + 1)
     })
@@ -45,7 +44,6 @@ export default function CarouselROOT({
         className="space-y-1"
         opts={{
           active: true,
-
           loop: true,
         }}
         setApi={setApi}

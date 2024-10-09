@@ -1,64 +1,91 @@
 'use client'
 
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
 import { cn } from '@/lib/utils'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Book, Ellipsis, Home, Mail, Megaphone } from 'lucide-react'
 
 import { Button } from '../ui/button'
+import SaqModal from './Saq/SacModal'
 
 const NavBar = () => {
-  const [showMenu, setShowMenu] = useState(false)
+  const [showmenu, setShowmenu] = useState(false)
+  const pathname = usePathname()
   const ToggleButton = () => {
-    setShowMenu((prev) => !prev)
+    setShowmenu((prev) => !prev)
   }
   return (
     <aside
-      data-showMenu={showMenu}
+      data-showmenu={showmenu}
       className={cn(
-        'group relative top-16 max-h-[calc(100vh-4rem)] border-r transition-all duration-300',
-        showMenu ? 'w-64' : 'w-14'
+        'group relative top-16 max-h-[calc(100vh-4rem)] border-r transition-all duration-300 max-sm:hidden',
+        showmenu ? 'w-64' : 'w-14'
       )}
     >
+      <nav className="h-full px-2 py-9">
+        <ul className="w-full space-y-2">
+          {pages.map(({ icon: Icon, ...page }) => {
+            return (
+              <li key={page.url} className="grid">
+                <Link href={page.url}>
+                  <Button
+                    size={'icon'}
+                    className="group/popover w-full group-data-[showmenu=true]:justify-start group-data-[showmenu=true]:px-4"
+                    variant={pathname !== page.url ? 'ghost' : 'default'}
+                  >
+                    <Icon className="h-4 w-4" />
+                    <span className="ml-3 transition-all duration-300 group-data-[showmenu=false]:hidden">
+                      {page.name}
+                    </span>
+                    <div className="absolute left-16 z-50 hidden rounded-md bg-yellow-300 px-2 py-1 text-black transition-all group-hover/popover:block group-data-[showmenu=true]:hidden">
+                      <p>{page.name}</p>
+                    </div>
+                  </Button>
+                </Link>
+              </li>
+            )
+          })}
+          <SaqModal />
+        </ul>
+      </nav>
       <Button
-        className="absolute inset-y-1/2 -right-4 h-8 w-8 items-center justify-center rounded p-2"
+        size={'icon'}
+        className="absolute inset-y-2/3 -right-4"
         onClick={ToggleButton}
       >
-        <ArrowRight className="transition-all duration-300 group-data-[showMenu=false]:rotate-180" />
+        <ArrowRight className="h-4 w-4 transition-all duration-300 group-data-[showmenu=true]:rotate-180" />
       </Button>
-
-      <div className="flex h-screen flex-col items-center justify-between p-4">
-        <nav className="mt-8 space-y-4">
-          <a
-            href="#"
-            className="block text-center transition-all duration-300 group-data-[showMenu=true]:px-4 group-data-[showMenu=true]:text-left"
-          >
-            <i className="fas fa-home"></i>
-            <span className="ml-2 hidden group-data-[showMenu=true]:inline">
-              Home
-            </span>
-          </a>
-          <a
-            href="#"
-            className="block text-center transition-all duration-300 group-data-[showMenu=true]:px-4 group-data-[showMenu=true]:text-left"
-          >
-            <i className="fas fa-user"></i>
-            <span className="ml-2 hidden group-data-[showMenu=true]:inline">
-              Perfil
-            </span>
-          </a>
-          <a
-            href="#"
-            className="block text-center transition-all duration-300 group-data-[showMenu=true]:px-4 group-data-[showMenu=true]:text-left"
-          >
-            <i className="fas fa-cog"></i>
-            <span className="ml-2 hidden group-data-[showMenu=true]:inline">
-              Configurações
-            </span>
-          </a>
-        </nav>
-      </div>
     </aside>
   )
 }
 export default NavBar
+
+const pages = [
+  {
+    name: 'Home',
+    icon: Home,
+    url: '/',
+  },
+  {
+    name: 'Comunicados',
+    icon: Megaphone,
+    url: '/announcements',
+  },
+  {
+    name: 'Faq',
+    icon: Mail,
+    url: '/faq',
+  },
+  {
+    name: 'Políticas',
+    icon: Ellipsis,
+    url: '/policies',
+  },
+  {
+    name: 'Regulamentos',
+    icon: Book,
+    url: '/regulations',
+  },
+]
