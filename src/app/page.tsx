@@ -22,10 +22,10 @@ const Home = async () => {
         </Suspense>
       </div>
       <div>
+        <RolesInformationSkeleton />
         <Suspense fallback={<RolesInformationSkeleton />}>
           <RolesInformation />
         </Suspense>
-        <RolesInformationSkeleton />
       </div>
       <div>
         <Suspense fallback={<p>loading...</p>}>
