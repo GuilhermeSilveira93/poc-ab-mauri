@@ -7,6 +7,13 @@
   margin: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior:smooth ;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;

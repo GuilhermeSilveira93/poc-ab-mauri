@@ -2,7 +2,6 @@ import { Button } from '@/components/ui/button'
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -11,10 +10,7 @@ import {
 import { Input } from '@/components/ui/input'
 
 import { FormularioUserAccountAction } from '@/@actions/FormularioUserAccountAction'
-import {
-  UserAccountSchema,
-  UserAccountSchemaType,
-} from '@/@schemas/UserAccountSchema'
+import { UserAccountSchema } from '@/@schemas/UserAccountSchema'
 import useUserAccountForm from '@/hooks/useUserAccountForm'
 
 type FormUserProps = {
@@ -22,7 +18,7 @@ type FormUserProps = {
 }
 
 const FormUser = ({ closeModal }: FormUserProps) => {
-  const { form, isSubmitting, submit } = useUserAccountForm({
+  const { form, submit } = useUserAccountForm({
     funcao: FormularioUserAccountAction,
     closeModal,
     schema: UserAccountSchema,

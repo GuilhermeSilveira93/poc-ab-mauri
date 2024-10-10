@@ -2,8 +2,9 @@
 
 import { CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 
-import { useCarouselNavigation } from '@/app/hooks/useCarouselNavigation'
 import { cn } from '@/lib/utils'
+
+import { useCarouselNavigation } from '../../hooks/useCarouselNavigation'
 
 export const CarouselNavigation = () => {
   const { count, current, NavigateTo } = useCarouselNavigation()
