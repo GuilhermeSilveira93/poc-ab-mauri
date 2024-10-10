@@ -67,7 +67,7 @@ const desempenho = [
   },
 ]
 const DesempenhoGeral = async () => {
-  await delay(4)
+  await delay(7)
   return (
     <Tabs defaultValue="1">
       <TabsList>
@@ -95,7 +95,7 @@ const DesempenhoGeral = async () => {
                 </h2>
               </div>
               <hr className="my-6 h-[1px] w-full shrink-0 bg-border" />
-              <section className="grid grid-cols-3 grid-rows-2 gap-5">
+              <section className="grid grid-rows-2 gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {value.ingredientes.map((ingrediente) => {
                   const percentWidth = `${ingrediente.atingimento}%`
                   return (
@@ -177,7 +177,7 @@ const DesempenhoGeral = async () => {
                 </h2>
               </div>
               <hr className="my-6 h-[1px] w-full shrink-0 bg-border" />
-              <section className="grid grid-cols-3 grid-rows-2 gap-5">
+              <section className="grid grid-rows-2 gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {value.ingredientes.map((ingrediente) => {
                   const percentWidth = `${ingrediente.atingimento}%`
                   return (

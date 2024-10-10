@@ -10,7 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       height: {
-        '34': '8.5rem',
+        18: '4.5rem',
+        34: '8.5rem',
       },
       screens: {
         '3xl': '1920px',

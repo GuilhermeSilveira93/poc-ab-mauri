@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import AvatarUser from './Avatar'
 
 const Header = () => {
   return (
@@ -15,10 +15,7 @@ const Header = () => {
           'https://poc-abb.vercel.app/_next/image?url=%2Flogo.png&w=256&q=75'
         }
       />
-      <Avatar>
-        <AvatarImage src="https://github.com/shadcn.png" />
-        <AvatarFallback>CN</AvatarFallback>
-      </Avatar>
+      <AvatarUser />
     </header>
   )
 }

@@ -4,10 +4,10 @@ import CardHanking from './components/CardHanking/CardHanking'
 import { CarouselPage } from './components/Carousel'
 import DesempenhoGeral from './components/DesempenhoGeral'
 import RolesInformation from './components/Roles'
-import { Skeleton } from '@/components/ui/skeleton'
 
 import CardHankingSkeleton from '@/@sheketons/home/CardHankingSkeleton'
 import CarouselSkeleton from '@/@sheketons/home/CarouselSkeleton'
+import DesempenhoGeralSkeleton from '@/@sheketons/home/DesempenhoGeralSkeleton'
 import RolesInformationSkeleton from '@/@sheketons/home/RolesInformationSkeleton'
 
 const Home = async () => {
@@ -22,13 +22,12 @@ const Home = async () => {
         </Suspense>
       </div>
       <div>
-        <RolesInformationSkeleton />
         <Suspense fallback={<RolesInformationSkeleton />}>
           <RolesInformation />
         </Suspense>
       </div>
       <div>
-        <Suspense fallback={<p>loading...</p>}>
+        <Suspense fallback={<DesempenhoGeralSkeleton />}>
           <DesempenhoGeral />
         </Suspense>
       </div>
