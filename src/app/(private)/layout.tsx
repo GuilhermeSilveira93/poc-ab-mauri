@@ -1,6 +1,5 @@
 import Header from '@/components/Header'
 import NavBar from '@/components/NavBar'
-import { Toaster } from '@/components/ui/sonner'
 export default function PrivateLayout({
   children,
 }: Readonly<{
@@ -15,7 +14,6 @@ export default function PrivateLayout({
           <div className="max-w-screen-3xl space-y-6">{children}</div>
         </main>
       </div>
-      <Toaster richColors />
     </div>
   )
 }

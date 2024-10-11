@@ -1,5 +1,6 @@
 import Image from 'next/image'
 
+import FormLogin from './components/FormLogin1'
 import {
   Card,
   CardContent,
@@ -7,10 +8,11 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { Headset } from 'lucide-react'
 
 const SignIn = () => {
   return (
-    <Card className="flex w-1/2 flex-col items-center text-center">
+    <Card className="flex flex-col items-center text-center w-full max-w-lg">
       <CardHeader>
         <Image
           style={{ objectFit: 'contain' }}
@@ -26,11 +28,16 @@ const SignIn = () => {
           Faça seu login
         </CardTitle>
       </CardHeader>
+      <FormLogin />
       <CardContent>
         <p>Esqueceu sua senha? Clique aqui</p>
       </CardContent>
       <hr className="w-full" />
-      <CardFooter>fale conosco</CardFooter>
+      <CardFooter className='p-4'>
+        <Headset />
+        <p className='font-bold'>fale conosco</p>
+        
+      </CardFooter>
     </Card>
   )
 }
