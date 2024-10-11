@@ -1,6 +1,3 @@
-'use client'
-import { useState } from 'react'
-
 import { Button } from '@/components/ui/button'
 import {
   FormField,
@@ -15,23 +12,14 @@ import { LoginSchema1Type } from '@/@schemas/LoginSchema'
 import { Loader2 } from 'lucide-react'
 
 import useFormLogin from '../hooks/useFormLogin1'
-import FormLogin2 from './FormLogin2'
-
-const FormLogin = () => {
-  const [email, setEmail] = useState('')
-
-  const setEmailValidado = (data: LoginSchema1Type) => {
-    setEmail(data.EMAIL)
-  }
-  const CancelarProcesso = () => {
-    setEmail('')
-  }
+export const Step1 = ({
+  setEmailValidado,
+}: {
+  setEmailValidado: (data: LoginSchema1Type) => void
+}) => {
   const { form, isSubmitting, submit } = useFormLogin({
     funcao: setEmailValidado,
   })
-  if (email.length > 0) {
-    return <FormLogin2 email={email} CancelarProcesso={CancelarProcesso} />
-  }
   return (
     <Form {...form}>
       <form
@@ -50,7 +38,7 @@ const FormLogin = () => {
                   {...field}
                 />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="text-left" />
             </FormItem>
           )}
         />
@@ -65,4 +53,3 @@ const FormLogin = () => {
     </Form>
   )
 }
-export default FormLogin

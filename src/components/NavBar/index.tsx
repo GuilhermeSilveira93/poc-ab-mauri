@@ -5,9 +5,18 @@ import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
 import { cn } from '@/lib/utils'
-import { ArrowRight, Book, Ellipsis, Home, Mail, Megaphone } from 'lucide-react'
+import {
+  ArrowRight,
+  Book,
+  Ellipsis,
+  Home,
+  Mail,
+  Megaphone,
+  MessageCircleQuestion,
+} from 'lucide-react'
 
 import { Button } from '../ui/button'
+import { DialogTrigger } from '../ui/dialog'
 import SaqModal from './Saq/SacModal'
 
 const NavBar = () => {
@@ -47,7 +56,22 @@ const NavBar = () => {
               </li>
             )
           })}
-          <SaqModal />
+          <SaqModal>
+            <DialogTrigger asChild>
+              <Button
+                className="group/popover w-full justify-start"
+                variant={'ghost'}
+              >
+                <MessageCircleQuestion className="h-4 w-4" />
+                <span className="ml-3 transition-all duration-300 group-data-[showMenu=false]:hidden">
+                  SAC
+                </span>
+                <div className="absolute left-16 z-50 hidden rounded-md bg-yellow-300 px-2 py-1 text-black transition-all group-hover/popover:block group-data-[showMenu=true]:hidden">
+                  <p>SAC</p>
+                </div>
+              </Button>
+            </DialogTrigger>
+          </SaqModal>
         </ul>
       </nav>
       <Button

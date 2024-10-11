@@ -53,7 +53,11 @@ const FormUser = ({ closeModal }: FormUserProps) => {
           )}
         />
         <div className="flex gap-4">
-          <Button variant={'secondary'} className="w-full font-bold text-black">
+          <Button
+            variant={'secondary'}
+            type="button"
+            className="w-full font-bold text-black"
+          >
             Cancelar
           </Button>
           <Button type="submit" className="w-full">

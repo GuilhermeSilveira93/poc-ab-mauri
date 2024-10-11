@@ -1,42 +1,25 @@
-import Image from 'next/image'
+import { Formularios } from './components/Formularios'
+import SaqModal from '@/components/NavBar/Saq/SacModal'
+import { Button } from '@/components/ui/button'
+import { Card, CardFooter } from '@/components/ui/card'
+import { DialogTrigger } from '@/components/ui/dialog'
 
-import FormLogin from './components/FormLogin1'
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
 import { Headset } from 'lucide-react'
 
 const SignIn = () => {
   return (
-    <Card className="flex flex-col items-center text-center w-full max-w-lg">
-      <CardHeader>
-        <Image
-          style={{ objectFit: 'contain' }}
-          className="h-16"
-          alt="logo da empresa"
-          width={130}
-          height={45}
-          src={
-            'https://poc-abb.vercel.app/_next/image?url=%2Flogo.png&w=256&q=75'
-          }
-        />
-        <CardTitle className="text-2xl font-bold leading-tight">
-          Faça seu login
-        </CardTitle>
-      </CardHeader>
-      <FormLogin />
-      <CardContent>
-        <p>Esqueceu sua senha? Clique aqui</p>
-      </CardContent>
-      <hr className="w-full" />
-      <CardFooter className='p-4'>
-        <Headset />
-        <p className='font-bold'>fale conosco</p>
-        
+    <Card className="relative flex w-full max-w-lg flex-col items-center text-center">
+      <Formularios />
+      <hr className="w-full pb-2" />
+      <CardFooter className="pt-0">
+        <SaqModal>
+          <DialogTrigger asChild>
+            <Button variant={'ghost'}>
+              <Headset className="mr-2 text-primary" />
+              <p className="font-bold">Fale conosco</p>
+            </Button>
+          </DialogTrigger>
+        </SaqModal>
       </CardFooter>
     </Card>
   )

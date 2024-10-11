@@ -124,7 +124,7 @@ const SaqForm = ({ ModalState }: SaqFormProps) => {
         />
         <div className="flex justify-end gap-4">
           <DialogClose asChild>
-            <Button variant={'outline'} className="font-bold">
+            <Button type="button" variant={'outline'} className="font-bold">
               Cancelar
             </Button>
           </DialogClose>
