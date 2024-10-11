@@ -1,3 +1,6 @@
+'use client'
+import Link from 'next/link'
+
 import { Button } from '@/components/ui/button'
 import {
   FormField,
@@ -11,7 +14,7 @@ import { Input } from '@/components/ui/input'
 import { SubmitRecuperacaoSenha } from '@/@actions/FormRecuperacaoSenha'
 import { Loader2 } from 'lucide-react'
 
-import useFormRecuperacaoSenha from '../hooks/useFormRecuperacaoSenha'
+import useFormRecuperacaoSenha from '../../sign-in/hooks/useFormRecuperacaoSenha'
 export const FormRecuperacaoSenha = () => {
   const { form, isSubmitting, submit } = useFormRecuperacaoSenha({
     funcao: SubmitRecuperacaoSenha,
@@ -39,14 +42,16 @@ export const FormRecuperacaoSenha = () => {
           )}
         />
         <div className="flex gap-4">
-          <Button
-            variant={'outline'}
-            type="button"
-            className="w-full font-bold"
-            disabled={isSubmitting}
-          >
-            Cancelar
-          </Button>
+          <Link href={'/auth/sign-in'} className="w-full">
+            <Button
+              variant={'outline'}
+              type="button"
+              className="w-full font-bold"
+              disabled={isSubmitting}
+            >
+              Cancelar
+            </Button>
+          </Link>
           <Button
             type="submit"
             className="w-full font-bold"

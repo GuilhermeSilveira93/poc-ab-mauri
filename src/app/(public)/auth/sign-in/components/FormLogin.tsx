@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link'
 import { useState } from 'react'
 
 import { LoginSchema1Type } from '@/@schemas/LoginSchema'
@@ -6,11 +7,7 @@ import { LoginSchema1Type } from '@/@schemas/LoginSchema'
 import { Step1 } from './Step1'
 import { Step2 } from './Step2'
 
-type formLoginProps = {
-  HandleEsqueciSenha: () => void
-}
-
-const FormLogin = ({ HandleEsqueciSenha }: formLoginProps) => {
+const FormLogin = () => {
   const [email, setEmail] = useState('')
   const setEmailValidado = (data: LoginSchema1Type) => {
     setEmail(data.EMAIL)
@@ -27,12 +24,12 @@ const FormLogin = ({ HandleEsqueciSenha }: formLoginProps) => {
       )}
       <p className="mx-auto text-muted-foreground">
         Esqueceu sua senha?{' '}
-        <span
+        <Link
           className="font-bold hover:cursor-pointer hover:text-blue-400 hover:underline"
-          onClick={HandleEsqueciSenha}
+          href={'/auth/forgot-password'}
         >
           Clique aqui
-        </span>
+        </Link>
       </p>
     </>
   )

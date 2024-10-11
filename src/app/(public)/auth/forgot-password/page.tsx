@@ -1,17 +1,24 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
-import FormLogin from './components/FormLogin'
+import { FormRecuperacaoSenha } from './components/FormRecuperacaoSenha'
 import SaqModal from '@/components/NavBar/Saq/SacModal'
 import { Button } from '@/components/ui/button'
 import { Card, CardFooter } from '@/components/ui/card'
 import { CardHeader, CardTitle } from '@/components/ui/card'
 import { DialogTrigger } from '@/components/ui/dialog'
 
-import { Headset } from 'lucide-react'
+import { ChevronLeft, Headset } from 'lucide-react'
 
 const SignIn = () => {
   return (
     <Card className="relative flex w-full max-w-lg flex-col items-center text-center">
+      <Link href={'/auth/sign-in'}>
+        <Button className="absolute left-2 top-2" variant={'outline'}>
+          <ChevronLeft className="mr-2 h-4 w-4" />
+          Voltar
+        </Button>
+      </Link>
       <CardHeader className="items-center">
         <Image
           style={{ objectFit: 'contain' }}
@@ -24,10 +31,10 @@ const SignIn = () => {
           }
         />
         <CardTitle className="text-2xl font-bold leading-tight">
-          Faça seu Login
+          Recuperação de Senha
         </CardTitle>
       </CardHeader>
-      <FormLogin />
+      <FormRecuperacaoSenha />
       <hr className="w-full pb-2" />
       <CardFooter className="pt-0">
         <SaqModal>
